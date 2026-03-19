@@ -1149,3 +1149,15 @@ aside.onebox {
     background: var(--secondary) !important;
     color: var(--tertiary) !important;
 }
+
+/*
+ * Latest topics: hide the "last poster" avatar image, but keep the
+ * surrounding layout/column space so the rest of the row stays aligned.
+ */
+.topic-list.latest-topic-list .topic-avatar img.avatar,
+.topic-list.latest-topic-list .topic-avatar img,
+#list-area .latest-topic-list .topic-avatar img.avatar,
+#list-area .latest-topic-list .topic-avatar img {
+    opacity: 0 !important;
+    pointer-events: none;
+}
