@@ -1151,13 +1151,13 @@ aside.onebox {
 }
 
 /*
- * Latest topics: hide the "last poster" avatar image, but keep the
- * surrounding layout/column space so the rest of the row stays aligned.
+ * Latest topics: hide the "last poster" avatar image.
+ * Use opacity (not display:none) so the column/layout spacing stays intact.
  */
-.topic-list.latest-topic-list .topic-avatar img.avatar,
-.topic-list.latest-topic-list .topic-avatar img,
-#list-area .latest-topic-list .topic-avatar img.avatar,
-#list-area .latest-topic-list .topic-avatar img {
+.topic-list.latest-topic-list .topic-poster img.avatar,
+#list-area .latest-topic-list .topic-poster img.avatar,
+.topic-list.latest-topic-list .topic-poster .avatar-flair,
+#list-area .latest-topic-list .topic-poster .avatar-flair {
     opacity: 0 !important;
     pointer-events: none;
 }
