@@ -307,20 +307,20 @@ input:hover,
 /* Navigation */
 
 .nav-pills {
-    box-shadow: 0 3px 0 var(--primary-50);
+    box-shadow: none;
 }
 .nav-pills>li a, .nav-pills>li button {
     transition: all 0.3s;
 }
 .nav-pills>li a.active, .nav-pills>li button.active {
-    color: var(--quaternary);
+    color: var(--tertiary);
     background-color: transparent;
-    box-shadow: 0 3px 0 var(--quaternary);
+    box-shadow: none;
 }
 .nav-pills>li>a:not(.active):hover, .nav-pills>li button:not(.active):hover {
-    color: var(--primary);
+    color: var(--tertiary);
     background-color: transparent;
-    box-shadow: 0 3px 0 var(--quaternary);
+    box-shadow: none;
 }
 .admin-controls,
 .admin-controls nav {
@@ -902,7 +902,7 @@ div.edit-category .edit-category-nav .nav-stacked,
 .mobile-view #navigation-bar.nav-pills a.toggle-link {
     min-width: 100px;
     border: none;
-    box-shadow: 0 3px 0 var(--quaternary);
+    box-shadow: none;
     justify-content: center;
 }
 .mobile-view .list-controls .nav-pills .drop {
