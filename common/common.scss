@@ -1151,13 +1151,14 @@ aside.onebox {
 }
 
 /*
- * Latest topics: hide the "last poster" avatar image.
- * Use opacity (not display:none) so the column/layout spacing stays intact.
+ * Latest topics: hide the entire "last poster" column.
+ * This removes the poster cell from the layout.
  */
-.topic-list.latest-topic-list .topic-poster img.avatar,
-#list-area .latest-topic-list .topic-poster img.avatar,
-.topic-list.latest-topic-list .topic-poster .avatar-flair,
-#list-area .latest-topic-list .topic-poster .avatar-flair {
-    opacity: 0 !important;
-    pointer-events: none;
+.topic-list.latest-topic-list .topic-poster,
+.topic-list.latest-topic-list th.topic-poster,
+.topic-list.latest-topic-list td.topic-poster,
+#list-area .latest-topic-list .topic-poster,
+#list-area .latest-topic-list th.topic-poster,
+#list-area .latest-topic-list td.topic-poster {
+    display: none !important;
 }
