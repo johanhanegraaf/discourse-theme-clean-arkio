@@ -1,5 +1,6 @@
 import NavigationItem from "discourse/components/navigation-item";
 import PluginOutlet from "discourse/components/plugin-outlet";
+import { concat, hash } from "@ember/helper";
 
 const NavigationBar = <template>
   {{#each this.navItems as |navItem|}}
