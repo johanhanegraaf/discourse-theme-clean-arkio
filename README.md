@@ -1,7 +1,5 @@
-# discourse-theme-clean
-A Clean theme for discourse
+# discourse-theme-clean-arkio
+A clean, simple theme for Discourse used for our Arkio community page
 
 ## Screenshots
-![](https://d11a6trkgmumsb.cloudfront.net/optimized/4X/3/7/c/37c0586c6238521528cc0d3653170cfe85231069_2_1035x571.png)
-![](https://d11a6trkgmumsb.cloudfront.net/original/4X/d/e/4/de45c99d13aa9531f78e68dc376397074345c81d.png)
-![](https://d11a6trkgmumsb.cloudfront.net/optimized/4X/1/b/d/1bda79e3003f66559b7c3003c510bdd3f335702d_2_345x750.png)
+![](src="https://github.com/user-attachments/assets/878f5d28-ef82-492e-a374-3584919cd96d)
