@@ -5,37 +5,52 @@ export default {
 
   initialize() {
     withPluginApi("0.8.13", (api) => {
-      const site = api.container.lookup("site:main");
-      if (!site.mobileView) {
+      const isMobileView = () => {
+        return (
+          document.body.classList.contains("mobile-view") ||
+          document.documentElement.classList.contains("mobile-view") ||
+          window.matchMedia?.("(max-width: 767px)")?.matches
+        );
+      };
+
+      if (!isMobileView()) {
         return;
       }
 
-      let scrollTop = window.scrollY;
       const body = document.body;
-      const scrollMax = 0;
       let lastScrollTop = 0;
       const hiddenNavClass = "nav-controls-hidden";
 
-      const add_class_on_scroll = () => body.classList.add(hiddenNavClass);
-      const remove_class_on_scroll = () =>
+      const addClassOnScroll = () => body.classList.add(hiddenNavClass);
+      const removeClassOnScroll = () =>
         body.classList.remove(hiddenNavClass);
 
-      window.addEventListener("scroll", function () {
-        scrollTop = window.scrollY;
-        if (
-          lastScrollTop < scrollTop &&
-          scrollTop > scrollMax &&
-          !body.classList.contains(hiddenNavClass)
-        ) {
-          add_class_on_scroll();
-        } else if (
-          lastScrollTop > scrollTop &&
-          body.classList.contains(hiddenNavClass)
-        ) {
-          remove_class_on_scroll();
-        }
-        lastScrollTop = scrollTop;
-      });
+      window.addEventListener(
+        "scroll",
+        function () {
+          const scrollTop = window.scrollY;
+          // Re-check mobile-ness during rendering/scroll to avoid
+          // static viewport assumptions and stay correct on resize.
+          if (!isMobileView()) {
+            return;
+          }
+
+          if (
+            lastScrollTop < scrollTop &&
+            scrollTop > 0 &&
+            !body.classList.contains(hiddenNavClass)
+          ) {
+            addClassOnScroll();
+          } else if (
+            lastScrollTop > scrollTop &&
+            body.classList.contains(hiddenNavClass)
+          ) {
+            removeClassOnScroll();
+          }
+          lastScrollTop = scrollTop;
+        },
+        { passive: true }
+      );
     });
   },
 };
